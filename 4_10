@@ -1,0 +1,13 @@
+import matplotlib.pyplot as plt
+
+feature = df.select_dtypes(include=["int64","float64"]).columns[0]
+values = df[feature].dropna()
+
+plt.hist(values, bins=10, edgecolor="black")
+plt.xlabel(feature)
+plt.ylabel("Frequency")
+plt.title(feature)
+plt.show()
+
+print("Mean:", values.mean())
+print("Variance:", values.var())
