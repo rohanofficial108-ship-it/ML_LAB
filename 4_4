@@ -1,0 +1,10 @@
+def minkowski_distance(vec1, vec2, p=2):
+    total = 0
+    for a, b in zip(vec1, vec2):
+        total += abs(a - b) ** p
+    return total ** (1/p)
+
+
+row1 = df.iloc[0].select_dtypes(include=["int64","float64"])
+row2 = df.iloc[1].select_dtypes(include=["int64","float64"])
+print(minkowski_distance(row1, row2, p=2))
