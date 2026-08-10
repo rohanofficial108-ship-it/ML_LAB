@@ -1,0 +1,15 @@
+def mean(values):
+    return sum(values) / len(values)
+
+def variance(values):
+    m = mean(values)
+    return sum((x - m)**2 for x in values) / len(values)
+
+def std_dev(values):
+    return variance(values) ** 0.5
+
+feature = df.select_dtypes(include=["int64","float64"]).columns[0]
+values = df[feature].dropna()
+print("Mean:", mean(values))
+print("Variance:", variance(values))
+print("Std Dev:", std_dev(values))
