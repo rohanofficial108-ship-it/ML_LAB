@@ -1,0 +1,6 @@
+def dot_product(vec1, vec2):
+    return sum(a*b for a, b in zip(vec1, vec2))
+
+row1 = df.select_dtypes(include=["int64","float64"]).iloc[0]
+row2 = df.select_dtypes(include=["int64","float64"]).iloc[1]
+print(dot_product(row1, row2))
