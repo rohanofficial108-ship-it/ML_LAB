@@ -1,0 +1,9 @@
+import pandas as pd
+
+df = pd.read_csv("project_dataset.csv")
+
+def one_hot_encode(series):
+    return pd.get_dummies(series, prefix=series.name)
+
+encoded = one_hot_encode(df["Category"]) 
+print(encoded.head())
